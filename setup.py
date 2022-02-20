@@ -3,11 +3,8 @@
 from setuptools import find_packages, setup  # type: ignore
 
 extras_require = {
-    "test": [  # `test` GitHub Action jobs uses this
-        "pytest>=6.0,<7.0",  # Core testing package
-        "pytest-xdist",  # multi-process runner
-        "pytest-cov",  # Coverage analyzer plugin
-        "hypothesis>=6.2.0,<7.0",  # Strategy-based fuzzer
+    "test": [
+        "pytest>=6.0,<7.0",
     ],
     "lint": [
         "black>=21.10b0,<22.0",  # auto-formatter and linter
@@ -42,27 +39,31 @@ with open("./README.md") as readme:
 
 
 setup(
-    name="<PYPI_NAME>",
+    name="yoyo-vega-cli",
     use_scm_version=True,
     setup_requires=["setuptools_scm"],
-    description="""<PYPI_NAME>: <SHORT_DESCRIPTION>""",
+    description="""yoyo-vega-cli: A CLI for the Yoyo Vega block explorer""",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="ApeWorX Ltd.",
-    author_email="admin@apeworx.io",
-    url="https://github.com/ApeWorX/<REPO_NAME>",
+    author="Yoyo Blocks",
+    author_email="admin@yoyo.ooo",
+    url="https://github.com/unparalleled-js/yoyo-vega-cli",
     include_package_data=True,
     install_requires=[
         "importlib-metadata ; python_version<'3.8'",
+        "click>=8.0.4"
     ],  # NOTE: Add 3rd party libraries here
     python_requires=">=3.7,<4",
     extras_require=extras_require,
-    py_modules=["<MODULE_NAME>"],
+    py_modules=["yoyo"],
     license="Apache-2.0",
     zip_safe=False,
     keywords="ethereum",
     packages=find_packages(exclude=["tests", "tests.*"]),
-    package_data={"<MODULE_NAME>": ["py.typed"]},
+    package_data={"yoyo": ["py.typed"]},
+    entry_points={
+        "console_scripts": ["yoyo=yoyo._cli:cli"],
+    },
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",

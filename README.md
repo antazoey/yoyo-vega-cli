@@ -1,6 +1,6 @@
-# <PROJECT_NAME>
+# Yoyo Vega Explorer CLI
 
-TODO: Description
+A command line interface for the Yoyo Vega block explorer.
 
 ## Dependencies
 
@@ -13,7 +13,7 @@ TODO: Description
 You can install the latest release via [`pip`](https://pypi.org/project/pip/):
 
 ```bash
-pip install <PYPI_NAME>
+pip install yoyo-vega-cli
 ```
 
 ### via `setuptools`
@@ -21,14 +21,30 @@ pip install <PYPI_NAME>
 You can clone the repository and use [`setuptools`](https://github.com/pypa/setuptools) for the most up-to-date version:
 
 ```bash
-git clone https://github.com/ApeWorX/<PYPI_NAME>.git
-cd <PYPI_NAME>
+git clone https://github.com/unparalleled-js/yoyo-vega-cli.git
+cd yoyo-vega-cli
 python3 setup.py install
 ```
 
 ## Quick Usage
 
-TODO: Describe library overview in code
+Start a Tendermint block explorer daemon:
+
+```bash
+yoyo blocks
+```
+
+View validators:
+
+```bash
+yoyo validators
+```
+
+Search for IDs:
+
+```bash
+yoyo search <id>
+```
 
 ## Development
 
